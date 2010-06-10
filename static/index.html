@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title></title>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
+
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+    setupPreso(false, '.');
+  });
+  </script>
+</head>
+
+<body>
+
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">&larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">z</td><td>toggle help (this)</td></tr>
+  </table>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content center" ref="overview/overview/1">
+<h1>Introduction to Vagrant</h1>
+
+<h2>Building and distributing virtual environments with ease&#x2028;</h2></div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="overview/overview/2">
+<h1>Ingredients of Vagrant</h1>
+
+<ul>
+<li>Ruby</li>
+<li>Virtualbox</li>
+<li>A base box</li>
+<li>Optional: provisioner like Chef</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="virtualbox/virtualbox/1">
+<h1>Oracle Virtualbox</h1>
+
+<p><img src="file:///Users/jvandijk/Documents/My presentations/vagrant-intro-bling-ruby/static/virtualbox/virtualbox.png" width="140" height="180" alt="Virtualbox"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="virtualbox/virtualbox/2">
+<h1>Oracle Virtualbox</h1>
+
+<ul>
+<li>virtualization software</li>
+<li>open source</li>
+<li>supports many operating systems</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="virtualbox/virtualbox/3">
+<h1>Virtualbox use cases</h1>
+
+<ul>
+<li>Distribution of environments</li>
+<li>Cross OS browser testing</li>
+<li>Non-standard setups</li>
+<li>Legacy projects</li>
+</ul>
+
+
+<p class="notes">VirtualBox is a powerful x86 and AMD64/Intel64 virtualization</p>
+
+<p class="notes">Presently, VirtualBox runs on Windows, Linux, Macintosh and OpenSolaris hosts and supports a large number of guest operating systems including but not limited to Windows (NT 4.0, 2000, XP, Server 2003, Vista, Windows 7), DOS/Windows 3.x, Linux (2.4 and 2.6), Solaris and OpenSolaris, and OpenBSD.</p>
+
+<p class="notes">problem is the setup of virtualbox. Not easy</p></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="vagrant/vagrant/1">
+<h1>Vagrant</h1>
+
+<h2>Building and distributing virtualboxes made easy</h2></div>
+</div><div class="slide" data-transition="none"><div class="content commandline incremental" ref="vagrant/vagrant/2">
+<h1>Example please?</h1>
+
+<pre><code><code class="command">$ gem install vagrant</code><code class="result">
+Successfully installed vagrant-0.3.4
+1 gem installed
+
+</code><code class="command">$ vagrant box add ubuntu http://files.vagrantup.com/base.box</code><code class="result">
+Vagrant: Downloading via Vagrant::Downloaders::HTTP...
+Vagrant: Creating tempfile for storing box file...
+Vagrant: Copying box to temporary location...
+Vagrant: Extracting box to /Users/jvandijk/.vagrant/boxes/ubuntu...
+Vagrant: Verifying box...
+Vagrant: Cleaning up downloaded box...
+</code></code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content commandline incremental" ref="vagrant/vagrant/3">
+<pre><code><code class="command">$ vagrant init ubuntu</code><code class="result">
+</code><code class="command">$ vagrant up</code><code class="result">
+Vagrant: Importing base VM (/Users/jvandijk/.vagrant/boxes/ubuntu/box.ovf)...
+Vagrant: Importing base VM (/Users/jvandijk/.vagrant/boxes/ubuntu/box.ovf)...
+Vagrant: Persisting the VM UUID (c77c601d-a43a-4939-9dad-068384e35c0f)...
+Vagrant: Matching MAC addresses...
+Vagrant: Running any VM customizations...
+Vagrant: Deleting any previously set forwarded ports...
+Vagrant: Forwarding ports...
+Vagrant: Forwarding "ssh": 22 =&gt; 2222
+Vagrant: Clearing previously set shared folders...
+Vagrant: Creating shared folders metadata...
+Vagrant: Booting VM...
+Vagrant: Waiting for VM to boot...
+Vagrant: Trying to connect (attempt #1 of 10)...
+Vagrant: Permissions on private key incorrect, fixing...
+Vagrant: Trying to connect (attempt #2 of 10)...
+Vagrant: VM booted and ready for use!
+Vagrant: Mounting shared folders...
+Vagrant: -- v-root: /vagrant
+</code></code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content commandline incremental" ref="vagrant/vagrant/4">
+<pre><code><code class="command">$ vagrant ssh</code><code class="result">
+Welcome to your vagrant instance!
+Last login: Fri Mar 12 02:04:54 2010 from 10.0.2.2
+vagrant@vagrantbase:~$
+</code></code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="vagrant/vagrant/5">
+<h1>Base boxes</h1>
+
+<ul>
+<li>Several boxes available
+(e.g. Ubuntu, Debian)</li>
+<li>Create your own if needed</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="vagrant/vagrant/6">
+<h1>Configuration</h1>
+
+<pre class="sh_ruby"><code>Vagrant::Config.run do |config|
+  config.vm.box = "ubuntu"
+
+  config.vm.customize do |vm|
+      vm.name = "Rails Test Environment"
+      vm.memory_size = 256
+  end
+
+  config.vm.share_folder('x','/host','/box')
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="chef/chef/1">
+<h1><code>$ vagrant provision</code></h1></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="chef/chef/2">
+<h1>Opscode Chef</h1>
+
+<h2>Infrastructure Automation for the Masses.&#x2122;</h2></div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="chef/chef/3">
+<pre class="sh_ruby"><code>Vagrant::Config.run do |config|
+  # ...
+  config.vm.provisioner = :chef_solo
+  config.chef.cookbooks_path = "cookbooks"
+  config.chef.json.merge!(
+    :mysql =&gt; { 
+      :server_root_password =&gt; "root"
+    }
+  )
+
+  config.chef.log_level = :debug
+  # ...
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="chef/chef/4">
+<h1>Cookbooks</h1>
+
+<ul>
+<li>Many available on github.com/opscode/cookbooks</li>
+<li>Example open source Vagrant project is rails_test_box</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="use_cases/use_cases/1">
+<h1>My use cases</h1>
+
+<ul>
+<li>Distributable development environments</li>
+<li>Distributable test environments</li>
+<li>Protoype production environments</li>
+<li>Legacy setups</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="use_cases/use_cases/2">
+<h1>Future use cases?</h1>
+
+<ul>
+<li>Setup of multiserver dev/test environments</li>
+<li>Deploy your box to EC2</li>
+<li>Remote Virtualboxes</li>
+<li>Ideas?</li>
+</ul>
+
+
+<!-- .notes Remote virtualboxes (:http://github.com/KieranP/vboxweb_rb), developing on thin clients? -->
+
+
+
+
+<!-- * Legacy configurations: Ancient Ruby versions or specific PHP environments
+* Add context to your open source projects: Rails Test Box, easy rails test environment setup
+* Be able to use exotic setups under whatever host OS X (Redis, Couchdb, Mongo) -->
+
+
+
+
+<!-- !SLIDE bullets
+# WIP, version 0.3.4
+* Multi VM support, simulate several servers talking to each other
+* RSync support, so shared folders are not slowing you down and remote VM's is possible(?)
+* Export VM's to EC2, deploy your VM
+* Managing remote Virtualboxes (:http://github.com/KieranP/vboxweb_rb), developing on thin clients? -->
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="finish/finish/1">
+<h1>More info</h1>
+
+<ul>
+<li>http://vagrantup.com/</li>
+<li>http://virtualbox.org</li>
+<li>http://opscode.com/chef</li>
+<li>http://github.com/opscode/cookbooks</li>
+<li>http://github.com/jeroenvandijk/rails_test_box</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="finish/finish/2">
+<h1>Ruby, AIGHT!</h1></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="finish/finish/3">
+<h1>Questions?</h1></div>
+</div>
+</div>
+
+</body>
+</html>

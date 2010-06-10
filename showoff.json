@@ -1,0 +1,12 @@
+{ "name": "Introduction Vagrant",
+  "description" : "Quick introduction to vagrant and its use cases", 
+  "sections": 
+    [ 
+      {"section": "overview" },
+      {"section": "virtualbox" },
+      {"section": "vagrant" },
+      {"section": "chef" },
+      {"section": "use_cases" },      
+      {"section": "finish"}
+    ]
+}
